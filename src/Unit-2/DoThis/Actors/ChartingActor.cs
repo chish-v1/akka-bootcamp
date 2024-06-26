@@ -20,6 +20,19 @@ namespace ChartApp.Actors
             public Dictionary<string, Series> InitialSeries { get; private set; }
         }
 
+        /// <summary>
+        /// Add a new <see cref="Series"/ > to the chart
+        /// </summary>
+        public class AddSeries
+        {
+            public Series Series { get; private set; }
+
+            public AddSeries(Series series)
+            {
+                Series = series;
+            }
+        }
+
         #endregion
 
         private readonly Chart _chart;
