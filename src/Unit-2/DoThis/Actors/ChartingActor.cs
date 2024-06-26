@@ -6,7 +6,7 @@ using Akka.Actor;
 
 namespace ChartApp.Actors
 {
-    public class ChartingActor : UntypedActor
+    public class ChartingActor : ReceiveActor
     {
         #region Messages
 
@@ -48,14 +48,7 @@ namespace ChartApp.Actors
             _seriesIndex = seriesIndex;
         }
 
-        protected override void OnReceive(object message)
-        {
-            if (message is InitializeChart)
-            {
-                var ic = message as InitializeChart;
-                HandleInitialize(ic);
-            }
-        }
+      
 
         #region Individual Message Type Handlers
 
